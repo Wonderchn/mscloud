@@ -1,23 +1,21 @@
 server:
   port: 3344
 spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   application:
     name: cloud-config-center
   cloud:
     config:
       server:
         git:
-          uri:  https://github.com/hhf19906/springcloud-config.git  #git@github.com:hhf19906/springcloud-config.git
+          uri:  https://github.com/Wonderchn/springcloud-config
           search-paths:
-            - springcloud-config
+            - config
       label: master
-
-rabbitmq:
-  host: localhost
-  port: 5672
-  username: guest
-  password: guest
-
 eureka:
   client:
     service-url:
@@ -28,5 +26,3 @@ management:
     web:
       exposure:
         include: 'bus-refresh'
-
-
